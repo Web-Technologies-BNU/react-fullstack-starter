@@ -108,7 +108,7 @@ src/
 
 ---
 
-## 🧰 Key Concepts You Can Explain in Class
+## 🧰 Key Concepts
 
 ### 1. **Frontend ↔ Backend**
 - Frontend never talks directly to Open-Meteo.
