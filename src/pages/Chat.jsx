@@ -17,7 +17,7 @@ function Card({ title, children }) {
 export default function Chat() {
     const [question, setQuestion] = useState("hi");
 
-  const weather = useApi(
+  const chat = useApi(
     () => api(`/api/chat`, { method: "POST", body: { question } }),
     
   );
@@ -37,7 +37,7 @@ export default function Chat() {
             placeholder="Type a question for ChatGPT…"
             style={iStyle}
           />
-          <button onClick={()=>weather.reload()} style={bStyle}>Send</button>
+          <button onClick={()=>chat.reload()} style={bStyle}>Send</button>
         </div>
         <div style={{ marginTop: 8, opacity: 0.8, fontSize: 13 }}>
           Try Lahore default (31.5, 74.3) or your city’s coordinates.
@@ -45,18 +45,18 @@ export default function Chat() {
       </Card>
 
       <Card title="Forecast (first N hourly temps)">
-        {weather.loading && <div>Loading…</div>}
-        {weather.error && <div style={{ color: "#ff6b6b" }}>{weather.error}</div>}
-        {weather.data && (
+        {chat.loading && <div>Loading…</div>}
+        {chat.error && <div style={{ color: "#ff6b6b" }}>{achat.error}</div>}
+        {chat.data && (
           <div style={{ display: "grid", gap: 8, marginTop: 12 }}>
             <div style={{ fontSize: 13, opacity: 0.8 }}>
-              <b>Model:</b> {weather.data.model}
+              <b>Model:</b> {chat.data.model}
             </div>
             <div style={{ fontSize: 13, opacity: 0.8 }}>
-              <b>Question:</b> {weather.data.question}
+              <b>Question:</b> {chat.data.question}
             </div>
             <div style={{ whiteSpace: "pre-wrap", lineHeight: 1.5, border: "1px solid #2b2b2b", borderRadius: 8, padding: 12 }}>
-              {weather.data.response}
+              {chat.data.response}
             </div>
           </div>
         )}
