@@ -1,4 +1,5 @@
 import Weather from "./pages/Weather.jsx";
+import Chat from "./pages/Chat.jsx";
 
 export default function App() {
   return (
@@ -8,6 +9,7 @@ export default function App() {
         <div style={{ opacity: 0.85 }}>React × Node — Minimal Weather App</div>
       </header>
       <Weather />
+      <Chat />
     </div>
   );
 }
